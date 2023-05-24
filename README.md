@@ -39,7 +39,7 @@ Or install IRKernel for all users (or the previous line fails)
 
 1. Open a new terminal
 
-2. Create new conda environment (*Optional:*) You can create a new conda environment:
+2. Create new conda environment (*Optional*): You can create a new conda environment:
 
 `conda create -n rkernel`
 
@@ -91,7 +91,7 @@ To install and load R packages, we can use `rpy2.robjects.packages.importr()`. F
 `utils.install_packages('stats')`  
 `stats = importr('stats')`
 
-A detailed example of using `importr` to compare `R` `p_adjust` with its Python implementation can be found in `R2Jupyter_example.ipynb`.
+A detailed example of using `importr` to compare `R` `p.adjust` with its equivalent Python implementation can be found in `R2Jupyter_example.ipynb`.
 
 ## Transfer data from Python to `R` and transfer the results back to Python
 
@@ -108,7 +108,7 @@ In another cell, run `R Magic`
 
 where input and output are Python variables.
 
-An example of comparing using `R Magic` to call `R` `p_adjust` with importing it to Python implementation can be found in `R2Jupyter_example.ipynb`.
+An example of comparing using `R Magic` to call `R` `p.adjust` with importing it to Python can be found in `R2Jupyter_example.ipynb`.
 
 To pass a special data structure such as a dataframe to `R`, we need to activate `pandas2ri`
 
