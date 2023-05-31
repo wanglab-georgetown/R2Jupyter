@@ -91,7 +91,7 @@ To install and load R packages, we can use `rpy2.robjects.packages.importr()`. F
 `utils.install_packages('stats')`  
 `stats = importr('stats')`
 
-A detailed example of using `importr` to compare `R` `p.adjust` with its equivalent Python implementation can be found in `R2Jupyter_example.ipynb`.
+A detailed example of using `importr` to compare `R` `p.adjust` with its equivalent Python implementation can be found in  [`R2Jupyter_example.ipynb`](https://github.com/wanglab-georgetown/R2Jupyter/blob/main/R2Jupyter_example.ipynb).
 
 Sometimes the `R` function name may change after being imported into Python. If you cannot find it, call the following lines to find it:  
 `methods = list(dir(stats))`  
