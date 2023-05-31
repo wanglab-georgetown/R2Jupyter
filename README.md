@@ -1,21 +1,21 @@
 # R in Jupyter Notebook
 
 ## Overview
-`R` is a programming language for statistics and data analysis. It is popular among data scientists and bioinformaticians. On the other hand, Jupyter Notebook is a web-based interactive computing platform that is widely used by Python programmers. There are use cases where a Python programmer may want to use some dedicated R functions in a Python Jupyter Notebook. We review three ways to use `R` in Jupyter Notebook:
+`R` is a programming language for statistics and data analysis. It is popular among data scientists and bioinformaticians. On the other hand, Jupyter Notebook is a web-based interactive computing platform that is widely used by Python programmers. There are use cases where a Python programmer may want to use some dedicated `R` functions in a Python Jupyter Notebook. We review three ways to use `R` in Jupyter Notebook:
 
-- Run `R` natively in Jupyter Notebook by installing an R kernel.
+- Run `R` natively in Jupyter Notebook by installing an `R` kernel.
 - Import and call `R` function in Python.
 - Transfer data from Python to `R`, run `R` function, and transfer the results back to Python.
 
 We show the details of each method below.
 
-## Install R
+## Install `R`
 
 Download R from https://cran.r-project.org/ and install.
 
-## Add R to Jupyter Notebook
+## Add `R` to Jupyter Notebook
 
-### R
+### `R`
 
 Open RStudio or type `R` in command line. Run the following:
 
@@ -93,6 +93,10 @@ To install and load R packages, we can use `rpy2.robjects.packages.importr()`. F
 
 A detailed example of using `importr` to compare `R` `p.adjust` with its equivalent Python implementation can be found in `R2Jupyter_example.ipynb`.
 
+Sometimes the `R` function name may change after being imported into Python. If you cannot find it, call the following lines to find it:  
+`methods = list(dir(stats))`  
+`[s for s in methods if "adjust" in s]`
+
 ## Transfer data from Python to `R` and transfer the results back to Python
 
 In some cases, one may want to reuse some existing `R` code rather than rewrite the whole `R` code in Python. In other cases, some `R` packages may be hard to use by importing into Python through `rpy2.robjects.packages.importr()`. It is then preferred to transfer data from Python to `R`, run `R` code natively, and then transfer the results back to Python.
@@ -108,7 +112,7 @@ In another cell, run `R Magic`
 
 where input and output are Python variables.
 
-An example of comparing using `R Magic` to call `R` `p.adjust` with importing it to Python can be found in `R2Jupyter_example.ipynb`.
+An example of comparing using `R Magic` to call `R` `p.adjust` with importing it to Python can be found in [`R2Jupyter_example.ipynb`](https://github.com/wanglab-georgetown/R2Jupyter/blob/main/R2Jupyter_example.ipynb).
 
 To pass a special data structure such as a dataframe to `R`, we need to activate `pandas2ri`
 
